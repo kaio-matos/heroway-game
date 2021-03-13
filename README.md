@@ -1,6 +1,6 @@
 ## Heroway Game
 
-Jogo feito no evento da Heroway como HTML, CSS e JS.
+Jogo feito no evento da Heroway com HTML, CSS e JS.
 
 ## Game
 
