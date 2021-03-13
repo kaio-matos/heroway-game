@@ -11,9 +11,16 @@ root.style.setProperty("--game-size", `${GAME_SIZE}px`);
 
 // ----
 
+function reset() {
+  location.reload()
+}
+
+// ----
+
 function createBoard() {
   const boardElement = document.getElementById("board");
   const elements = [];
+
 
 
   function createElement(options) {
@@ -49,7 +56,7 @@ function createBoard() {
 
 
 
-    function validateMovement(position, conflictItem){
+    function validateMovement(position, conflictItem) {
       return (
         position.left >= 48 &&
         position.left <= 864 &&
@@ -60,7 +67,7 @@ function createBoard() {
       )
     }
 
-    function getMovementConflict(position, els){
+    function getMovementConflict(position, els) {
       const conflictItem = els.find((currentElement) => {
         return (
           currentElement.currentPosition.top === position.top &&
@@ -72,28 +79,28 @@ function createBoard() {
     }
 
 
-    function validateConflicts(currentEl, conflictItem){
-      function finishGame(message){
-        setTimeout(() =>{
+    function validateConflicts(currentEl, conflictItem) {
+      function finishGame(message) {
+        setTimeout(() => {
           alert(message)
           location.reload();
         }, 100);
-        
+
       }
-      if (!conflictItem){
+      if (!conflictItem) {
         return;
       }
 
-      if (currentEl.item === 'hero'){
-        if(conflictItem.item === 'mini-demon' || conflictItem.item === "trap"){
+      if (currentEl.item === 'hero') {
+        if (conflictItem.item === 'mini-demon' || conflictItem.item === "trap") {
           finishGame("You died!");
         }
-        if (conflictItem.item === "chest"){
+        if (conflictItem.item === "chest") {
           finishGame("You win! Congratulations");
         }
       }
 
-      if (currentEl.item === 'mini-demon' && conflictItem.item === 'hero'){
+      if (currentEl.item === 'mini-demon' && conflictItem.item === 'hero') {
         finishGame("You died!")
       }
     }
@@ -107,7 +114,7 @@ function createBoard() {
       const isValidMovement = validateMovement(newPosition, conflictItem);
 
 
-      if (isValidMovement){
+      if (isValidMovement) {
         currentElement.currentPosition = newPosition
 
         htmlElement.style.top = `${newPosition.top}px`;
@@ -175,10 +182,10 @@ const board = createBoard();
 // Left = number
 
 
-for (let index = 0; index < 2; index++) {
+for (let index = 0; index < 10; index++) {
   board.createEnemy({
-    top: TILE_SIZE * Math.floor(Math.random() * 10),
-    left: TILE_SIZE * Math.floor(Math.random() * 10),
+    top: TILE_SIZE * Math.floor((Math.random() * 10) + 2),
+    left: TILE_SIZE * Math.floor(Math.random() * 20),
   });
 }
 
