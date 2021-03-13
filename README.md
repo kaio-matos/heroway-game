@@ -10,6 +10,6 @@ Regras:
 * Ao tocar em um spike você perde
 * Ao tocar no baú você ganha
 
-[image](./README/game.gif)
+![image](./README/game.gif)
 
 [Meu Linkedin](https://www.linkedin.com/in/kaio-matos-9532271a5)
