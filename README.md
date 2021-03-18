@@ -2,6 +2,7 @@
 
 Jogo feito no evento da Heroway com HTML, CSS e JS.
 
+[Site](https://kaio-matos.github.io/heroway-game/)
 ## Game
 
 Regras:
